@@ -3,3 +3,7 @@
  * Description: Based on the Timber Starter Theme
  * Author: Jake Cooper
 */
+
+.navbar-nav .nav-link {
+    white-space: nowrap;
+}
