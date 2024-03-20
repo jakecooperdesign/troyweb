@@ -1,9 +1,68 @@
 /*
- * Theme Name: Troy Web Applicant Theme
- * Description: Based on the Timber Starter Theme
- * Author: Jake Cooper
+* Theme Name: Troy Web Applicant Theme
+* Description: Based on the Timber Starter Theme
+* Author: Jake Cooper
 */
+
+:root {
+    --color-BrandOrange: #E77436;
+    --color-BrandDark: #29292E;
+    --color-Grey: #474852;
+    --color-Highlight: #F7CEB8;
+    --color-Neutral: #EFEFEF;
+
+    --type-size-1: 3rem;
+    --type-size-2: 2.25rem;
+    --type-size-3: 2rem;
+    --type-size-4: 1.375rem;
+
+    --font-serif: "Oldenburg", serif;
+    --font-sans: "Lato", sans-serif;
+
+    --tracking-tight: -1px;
+    --tracking-loose: 1.5px;
+
+    --type-size-body: var(var(--type-size-4));
+    --type-size-body-large: var(var(var(--type-size-2)));
+
+}
 
 .navbar-nav .nav-link {
     white-space: nowrap;
+}
+
+.bg-orange          { background-color: var(--color-BrandOrange); }
+.bg-dark            { background-color: var(--color-BrandDark); }
+.bg-grey            { background-color: var(--color-Grey); }
+.bg-highlight       { background-color: var(--color-Highlight); }
+.bg-neutral         { background-color: var(--color-Neutral); }
+
+.text-orange        { color: var(--color-BrandOrange); }
+.text-dark          { color: var(--color-BrandDark); }
+.text-grey          { color: var(--color-Grey); }
+.text-highlight     { color: var(--color-Highlight); }
+.text-neutral       { color: var(--color-Neutral); }
+
+.italic             { font-style: italic; }
+.font-serif         { font-family: var(--font-serif); }
+.font-sans          { font-family: var(--font-sans) }
+
+.text-body          { font-size: var(--type-size-body); }
+.text-large         { font-size: var(--type-size-body-large); }
+
+h1,h2,h3 {
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-weight: 700;
+    color: var(--color-BrandDark);
+    letter-spacing: var(--tracking-tight);
+}
+
+h1 { font-size: var(--type-size-1); }
+h2 { font-size: var(--type-size-2); }
+h3 { font-size: var(--type-size-3); }
+
+body {
+    font-family: var(--font-serif);
+    font-weight: 400;
 }

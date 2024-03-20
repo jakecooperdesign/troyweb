@@ -3,38 +3,47 @@
 {% block content %}
 	<div class="content-wrapper">
 		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-			<img src="{{ post.thumbnail.src|resize(1200, 300) }}">
-			<section class="article-content">
-				<h1 class="article-h1">{{ post.title }}</h1>
-				<a href="{{ post.link }}">{{ _e('edit') }}</a>
-				<p class="blog-author">
-					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> <time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
-				</p>
-				<div class="article-body">
-                    APPLICANT
-					{{post.content}}
+			<header>
+				<img src="{{ post.thumbnail.src }}">
+				<div style="background-image: url('https://troyweb.test/wp-content/uploads/2024/03/hero-background.jpg');">
+					<h1 class="article-h1">Troy Web Developers: {{ post.title }}</h1>
 				</div>
+				<div>
+					<dl>
+						<dt class="font-sans">Species:</dt>
+						<dd>{{post.species}}</dd>
+						<dt class="font-sans">Skills:</dt>
+						<dd>{{post.terms("skills")|join(', ')}}</dd>
+					</dl>
+				</div>
+			</header>
+
+			<section class="about-me font-serif text-body">
+				{{post.content}}
 			</section>
 
-			<!-- comment box -->
-			<section class="comment-box">
-				<!-- comments -->
-				<div class="comments">
-				    {% if post.comments %}
-					<h3> comments </h3>
-					{% for cmt in post.comments %}
-					    {% include "comment.twig" with {comment:cmt} %}
+			<section class="core-values">
+				<h2>Core Values</h2>
+				{% for value in get_posts(post.core_values) %}
+					<div class="core-value">
+						<img src="{{value.thumbnail.src}}" alt="{{value.title}} Image" class="value-image">
+						<h3 class="value-title">{{value.title}}</h3>
+						<p class="value-description">{{value.content}}</p>
+					</div>
+				{% endfor %}
+			</section>
+
+			<section class="experience">
+				<h2>Experience</h2>
+				<ul>
+					{% for item in post.terms("experience") %}
+						<li>{{item.title}}</li>
 					{% endfor %}
-				    {% endif %}
-				</div>
+				</ul>
+				<div><img src="{{site.url}}/wp-content/uploads/2024/03/code-image.png" alt=""></div>
+			</section> 
 
-				{% if post.comment_status == "closed" %}
-					<p> comments for this post are closed </p>
-				{% else %}
-				    <!-- comment form -->
-				    {% include "comment-form.twig" %}
-				{% endif %}
-			</section>
+
 		</article>
 	</div><!-- /content-wrapper -->
 {% endblock %}

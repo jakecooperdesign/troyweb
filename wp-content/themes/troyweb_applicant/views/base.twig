@@ -9,37 +9,20 @@
 	<body class="{{body_class}}" data-template="base.twig">
 		{{ function('wp_body_open') }}
 		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
+		
 		<header class="header">
 			{% block header %}
-				<div class="wrapper container">
-					<nav class="navbar navbar-expand-lg">
-						<div class="d-flex flex-nowrap w-100 justify-content-between">
-							<a class="hdr-logo-link navbar-brand" href="{{site.url}}" rel="home">{{site.name}}</a>
-							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-								<span class="navbar-toggler-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-	<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg></span>
-							</button>
-						</div>
-						<div class="collapse navbar-collapse" id="navbarSupportedContent">
-							{% include "menu.twig" with {'items': menu.get_items} %}
-						</div>
-					</nav>
-				</div>
+				{% include "navbar.twig" %}
 			{% endblock %}
 		</header>
 
 		<section id="content" role="main" class="content-wrapper">
 			{% if title %}<h1>{{title}}</h1>{% endif %}
-			<div class="wrapper container">
+			<div class="wrapper">
 				{% block content %}
 					Sorry, no content
 				{% endblock %}
 			</div>
-			{% if sidebar %}
-				<aside class="layout-sidebar">
-					{{sidebar}}
-				</aside>
-			{% endif %}
 		</section>
 
 		{% block footer %}
