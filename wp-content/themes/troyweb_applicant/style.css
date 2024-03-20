@@ -79,3 +79,23 @@ body {
     max-width: 1000px;
     margin: 0 auto;
 }
+
+.nav-link {
+    font-family: var(--font-sans);
+    color: var(--color-BrandDark);
+    font-size: var(--type-size-4);
+}
+
+.btn, .nav-link.btn {
+    padding: 6px 10px !important;
+}
+
+.btn-primary {
+    background-color: var(--color-BrandOrange);
+    color: white;
+    border-color: var(--color-BrandOrange);
+}
+
+.site-logo {
+    max-width: 20rem;
+}

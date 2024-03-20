@@ -1,13 +1,23 @@
-<div class="px-4">
+<div class="px-4 py-2">
 	<nav class="navbar navbar-expand-lg">
 		<div class="d-flex flex-nowrap w-100 justify-content-between">
-			<a class="hdr-logo-link navbar-brand" href="{{site.url}}" rel="home">{{site.name}}</a>
+			<a class="hdr-logo-link navbar-brand" href="{{site.url}}" rel="home">
+				<img src="{{site.url}}/wp-content/uploads/2024/03/tw-logo-header.png" alt="Site Logo" class="site-logo">
+			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg></span>
 			</button>
 		</div>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			{% include "menu.twig" with {'items': menu.get_items} %}
+			{% if menu %}
+				<ul class="navbar-nav gap-3">
+				{% for item in menu.items %}
+					<li class="{{ item.classes | join(' ') }} nav-item">
+						<a target="{{ item.target }}" href="{{ item.link }}" class="nav-link {{loop.last ? 'btn btn-primary'}}">{{ item.title }}</a>
+					</li>
+				{% endfor %}
+				</ul>
+			{% endif %}
 		</div>
 	</nav>
 </div>
