@@ -8,13 +8,13 @@
 					<img src="{{ post.thumbnail.src }}">
 				</div>
 				<div class="image-wrapper py-5" style="background-image: url('{{site.url}}/wp-content/uploads/2024/03/hero-background.jpg'); background-size: cover;">
-					<div class="container-content">
+					<div class="container">
 						<div class="col-6 offset-6">
 							<h1 class="article-h1 text-orange">Troy Web Developers: {{ post.title }}</h1>
 						</div>
 					</div>
 				</div>
-				<div class="container-content py-5">
+				<div class="container py-5">
 					<div class="col-6 offset-6">
 						<dl>
 							<dt class="font-sans">Species:</dt>
@@ -26,8 +26,8 @@
 				</div>
 			</header>
 
-			<section class="about-me font-serif">
-				<div class="container-content py-5">
+			<section class="about-me font-serif pt-8">
+				<div class="container py-5">
 					<div class="row">
 						<h2 class="col">About Me:</h2>
 						<div class="col-9 text-large">
@@ -37,18 +37,18 @@
 				</div>
 			</section>
 
-			<section class="core-values">
-				<div class="container-content py-5">
+			<section class="core-values pb-5">
+				<div class="container py-5">
 					<h2>Core Values</h2>
 				</div>
 				<div class="triangle-up"></div>
 				<div class="bg-orange">
-					<div class="container-content py-5">
-						<div class="row">
+					<div class="container py-2">
+						<div class="row justify-content-between">
 							{% for value in get_posts(post.core_values) %}
-							<div class="core-value col text-center text-white px-5">
-								<img src="{{value.thumbnail.src}}" alt="{{value.title}} Image" class="value-image mb-4">
-								<h3 class="value-title italic tracking-loose text-white">{{value.title}}</h3>
+							<div class="core-value position-relative text-center text-white px-5">
+								<img src="{{value.thumbnail.src}}" alt="{{value.title}} Image" class="value-image position-absolute top-0 start-50 translate-middle">
+								<h3 class="value-title italic tracking-loose text-white pt-8">{{value.title}}</h3>
 								{{value.content}}
 							</div>
 							{% endfor %}
@@ -58,11 +58,11 @@
 				<div class="triangle-down"></div>
 			</section>
 
-			<section class="experience">
-				<div class="container-content py-5">
+			<section class="experience pb-8">
+				<div class="container py-5">
 					<div class="row">
 						<div class="col-6">
-							<div class="row">
+							<div class="row pt-5">
 								<h2 class="col">Experience</h2>
 								<ul class="col text-large">
 									{% for item in post.terms("experience") %}
