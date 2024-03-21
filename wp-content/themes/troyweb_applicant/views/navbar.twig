@@ -10,7 +10,7 @@
 		</div>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			{% if menu %}
-				<ul class="navbar-nav gap-3">
+				<ul class="navbar-nav gap-3 align-items-center">
 				{% for item in menu.items %}
 					<li class="{{ item.classes | join(' ') }} nav-item">
 						<a target="{{ item.target }}" href="{{ item.link }}" class="nav-link {{loop.last ? 'btn btn-primary'}}">{{ item.title }}</a>

@@ -123,12 +123,18 @@ body {
 }
 
 .btn, .nav-link.btn {
-    padding: 6px 10px !important;
+    padding: 8px 14px !important;
 }
 
 .btn-primary {
     background-color: var(--color-BrandOrange);
     color: white;
+    border: 3px solid var(--color-BrandOrange);
+}
+
+.btn-primary:hover {
+    color: var(--color-BrandOrange);
+    background-color: transparent;
     border-color: var(--color-BrandOrange);
 }
 
