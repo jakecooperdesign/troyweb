@@ -5,80 +5,81 @@
 		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
 			<header class="gradient-light position-relative">
 				<div class="image-wrapper" style="background-image: url('{{site.url}}/wp-content/uploads/2024/03/hero-background.jpg'); background-size: cover;">
-					<div class="container">
-						<div class="row">
-							<div class="col-6 position-relative h-auto">
-								<div class="applicant-image-bg position-absolute top-100 start-50 translate-middle gradient-dark"></div>
-								<img src="{{ post.thumbnail.src }}" class="applicant-image position-absolute top-100 start-50 translate-middle">
+					<div class="container px-md-5">
+						<div class="row position-relative applicant-name">
+							<div class="col-md-6">
+								<div class="applicant-image-bg position-absolute top-100 start-50 start-md-25 translate-middle gradient-dark"></div>
+								<img src="{{ post.thumbnail.src }}" class="applicant-image position-absolute top-100 start-50 start-md-25 translate-middle">
 							</div>
-							<div class="col-6 py-5">
-								<h1 class="article-h1 text-orange">Troy Web Developers: {{ post.title }}</h1>
+							<div class="col-md-6 py-5 text-center text-md-start">
+								<h1 class="article-h1 text-orange">
+									<span class="d-md-block">Troy Web Developers: </span>
+									{{ post.title }}
+								</h1>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="container py-5">
-					<div class="attributes col-5 offset-6 text-large">
+				<div class="container px-md-5 py-5 text-center text-md-start">
+					<div class="applicant-attributes col-md-5 offset-md-6 text-large px-5">
 
 						<div class="attribute row">
-							<div class="attribute-label col-3"><p class="text-end font-sans bold">Species:</p></div>
-							<div class="attribute-value col"><p>{{post.species}}</p></div>
+							<div class="attribute-label col-md-3"><p class="mb-0 text-md-end font-sans bold">Species:</p></div>
+							<div class="attribute-value col-md"><p class="mb-0">{{post.species}}</p></div>
 						</div>
 
 						<div class="attribute row mt-4">
-							<div class="attribute-label col-3"><p class="text-end font-sans bold">Skills:</p></div>
-							<div class="attribute-value col"><p>{{post.terms("skills")|join(', ')}}</p></div>
+							<div class="attribute-label col-md-3"><p class="mb-0 text-md-end font-sans bold">Skills:</p></div>
+							<div class="attribute-value col-md"><p class="mb-0">{{post.terms("skills")|join(', ')}}</p></div>
 						</div>
 					</div>
 				</div>
 			</header>
 
-			<section class="about-me font-serif pt-8">
-				<div class="container py-5">
+			<section class="about-me font-serif pt-5 pt-md-6 text-center text-md-start">
+				<div class="container px-md-5 py-5">
 					<div class="row">
-						<h2 class="col">About Me:</h2>
-						<div class="col-9 text-large">
+						<h2 class="col-md">About Me:</h2>
+						<div class="col-md-9 text-large">
 							{{post.content}}
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<section class="core-values pb-5">
-				<div class="container py-5">
-					<h2>Core Values</h2>
+			<section class="core-values pb-5 text-center text-md-start">
+				<div class="container px-md-5 py-5">
+					<h2>Core Values:</h2>
 				</div>
-				<div class="triangle-up"></div>
-				<div class="bg-orange">
-					<div class="container py-2">
-						<div class="row justify-content-between">
+				<div class="bg-orange diagonal-edges">
+					<div class="container px-md-5">
+						<div class="row justify-content-between gap-5">
 							{% for value in get_posts(post.core_values) %}
-							<div class="core-value position-relative text-center text-white px-5">
-								<img src="{{value.thumbnail.src}}" alt="{{value.title}} Image" class="value-image position-absolute top-0 start-50 translate-middle">
-								<h3 class="value-title italic tracking-loose text-white pt-8">{{value.title}}</h3>
-								{{value.content}}
+							<div class="core-value position-relative text-center text-white px-5 d-flex flex-column align-items-center">
+								<img src="{{value.thumbnail.src}}" alt="{{value.title}} Image" class="value-image mb-4">
+								<h3 class="value-title italic tracking-loose text-white">{{value.title}}</h3>
+								<div class="mb-4">{{value.content}}</div>
 							</div>
 							{% endfor %}
 						</div>
 					</div>
 				</div>
-				<div class="triangle-down"></div>
 			</section>
 
-			<section class="experience pb-8">
-				<div class="container py-5">
-					<div class="row">
-						<div class="col-6">
+			<section class="experience pb-8 text-center text-md-start">
+				<div class="container px-md-5">
+					<div class="row gap-5 gap-md-0">
+						<div class="col-md-6">
 							<div class="row pt-5">
-								<h2 class="col">Experience</h2>
-								<ul class="col text-large">
+								<h2 class="col-md">Experience:</h2>
+								<ul class="col-md text-large list-unstyled">
 									{% for item in post.terms("experience") %}
 										<li>{{item.title}}</li>
 									{% endfor %}
 								</ul>
 							</div>
 						</div>
-						<div class="col-6 d-flex justify-content-center">
+						<div class="col-md-6 d-flex justify-content-center">
 							<img src="{{site.url}}/wp-content/uploads/2024/03/code-image.png" alt="">
 						</div>
 					</div>
