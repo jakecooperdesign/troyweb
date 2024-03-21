@@ -4,8 +4,11 @@
 	<div class="content-wrapper">
 		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
 			<header class="gradient-light position-relative">
-				<div class="position-absolute top-0 bottom-0 col-6 d-flex justify-content-center">
-					<img src="{{ post.thumbnail.src }}">
+				<div class="position-absolute top-0 bottom-0 col-6">
+					<div class="position-relative" style="width: 100%; height: 100%;">
+						<div class="applicant-image-bg position-absolute top-50 start-50 translate-middle gradient-dark"></div>
+						<img src="{{ post.thumbnail.src }}" class="applicant-image position-absolute top-50 start-50 translate-middle">
+					</div>
 				</div>
 				<div class="image-wrapper py-5" style="background-image: url('{{site.url}}/wp-content/uploads/2024/03/hero-background.jpg'); background-size: cover;">
 					<div class="container">

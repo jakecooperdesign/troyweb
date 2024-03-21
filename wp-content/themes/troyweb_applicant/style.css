@@ -34,8 +34,13 @@
 .bg-neutral         { background-color: var(--color-Neutral); }
 
 .gradient-light { 
-    background: rgb(239,239,239);
-    background: linear-gradient(90deg, rgba(239,239,239,1) 0%, rgba(255,255,255,1) 100%);
+    background: var(--color-Neutral);
+    background: linear-gradient(to right, var(--color-Neutral), white);
+}
+
+.gradient-dark { 
+    background: var(--color-Grey);
+    background: linear-gradient(var(--color-BrandDark), var(--color-Grey));
 }
 
 .text-orange        { color: var(--color-BrandOrange); }
@@ -139,4 +144,15 @@ body {
 
 .core-value {
     max-width: 18rem;
+}
+
+.applicant-image {
+    width: 200px;
+}
+
+.applicant-image-bg {
+    width: 300px;
+    height: 300px;
+    border-radius: 999px;
+    border: 16px solid var(--color-BrandOrange)
 }
