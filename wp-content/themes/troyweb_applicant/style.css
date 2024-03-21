@@ -98,9 +98,9 @@ h1,h2,h3 {
     letter-spacing: var(--tracking-tight);
 }
 
-h1 { font-size: var(--type-size-1); }
-h2 { font-size: var(--type-size-2); }
-h3 { font-size: var(--type-size-3); }
+h1, .text-size-1 { font-size: var(--type-size-1); }
+h2, .text-size-2 { font-size: var(--type-size-2); }
+h3, .text-size-3 { font-size: var(--type-size-3); }
 
 body {
     font-family: var(--font-serif);
@@ -161,4 +161,27 @@ body {
     height: 300px;
     border-radius: 999px;
     border: 16px solid var(--color-BrandOrange)
+}
+
+.attribute {
+    position: relative;
+    padding-top: 1rem;
+}
+
+.attribute-label,
+.attribute-value {
+    z-index: 1;
+}
+
+.attribute::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    content: "";
+    clip-path: polygon(1% 36%, 97% 0%, 100% 82%, 0% 100%);
+    background-color: var(--color-Highlight);
+    z-index: 0;
 }

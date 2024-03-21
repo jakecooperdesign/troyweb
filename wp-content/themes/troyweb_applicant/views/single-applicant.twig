@@ -18,13 +18,17 @@
 					</div>
 				</div>
 				<div class="container py-5">
-					<div class="col-6 offset-6">
-						<dl>
-							<dt class="font-sans">Species:</dt>
-							<dd>{{post.species}}</dd>
-							<dt class="font-sans">Skills:</dt>
-							<dd>{{post.terms("skills")|join(', ')}}</dd>
-						</dl>
+					<div class="attributes col-5 offset-6 text-large">
+
+						<div class="attribute row">
+							<div class="attribute-label col-3"><p class="text-end font-sans bold">Species:</p></div>
+							<div class="attribute-value col"><p>{{post.species}}</p></div>
+						</div>
+
+						<div class="attribute row mt-4">
+							<div class="attribute-label col-3"><p class="text-end font-sans bold">Skills:</p></div>
+							<div class="attribute-value col"><p>{{post.terms("skills")|join(', ')}}</p></div>
+						</div>
 					</div>
 				</div>
 			</header>
