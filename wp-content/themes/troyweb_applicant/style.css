@@ -106,3 +106,29 @@ body {
     height: 2.5rem;
     fill: currentColor;
 }
+
+.triangle-up,
+.triangle-down {
+    height: 100px;
+    width: 100%;
+    position: relative;
+}
+
+.triangle-up::after,
+.triangle-down::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    background-color: var(--color-BrandOrange);
+}
+
+.triangle-up::after {
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+}
+
+.triangle-down::after {
+    clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+}
